@@ -8,10 +8,28 @@
 
 <body>
     <h1>Suma de Números Primos</h1>
+    <script>
+        function esprimo(numero) { // creamos una funcion llamada esprimo con un parametro
+            for (let i = 2; i < numero; i++) { // indicamos que desde 2 hasta parametro se debe crear los numeros
+                if (numero % i === 0) { // si es divisible a numeros menores que el nos devolvera un return false en caso contrario el otro return
+                    return false;
+                }
+            }
+            return numero > 1; // si el numero es mayor a 1 nos dara los numeros primos
+        }
+        for (let n = 0; n < 16; n++) { // indicamos que desde 0 hasta la variable declarada se debe crear los numeros
+            n = prompt("Introduce un numero"); // nos mostrara una ventana emergente donde debemos introducir los datos
+            let cont = 0;
+            if (esprimo(n)) { // si los numeros que hemos introducir cumple la funcion esprimo nos devolvera los numeros que son primos
+                cont += n;
+                console.log(cont); // nos mostrara un mensaje en la consola
+            }
+        }
+    </script>
     <button onclick="calcularSumaPrimos()">Calcular Suma de Números Primos</button>
     <div id="resultados"></div>
 
-  
+
 </body>
 
 </html>
